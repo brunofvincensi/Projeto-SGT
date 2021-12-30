@@ -1,0 +1,74 @@
+<!-- Page Content -->
+<!--
+    <div id="aluno">
+        <ul>
+          <ui>Nome<input type="text"></ui>
+          <ui>CPF<input type="text"></ui>
+          <ui>Cep<input type="number"></ui>
+          <ui>Cidade<input type="text"></ui>
+          <ui>Data De Cadastro<input type="date"></ui>
+          <p> 
+            <input type="submit" value="Cadastrar"/>
+            <input type="submit" value="Voltar"/> 
+          </p>
+        </ul>
+      </div>
+-->
+<div class="container main-container">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+        <h1 class="display-3">Aluno</h1>
+        <p class="lead"></p>
+    </header>
+
+
+
+
+    <form class="mbr-form">
+        <div class="row row-sm-offset">
+     
+            <div class="col-md-4 multi-horizontal" data-for="nomeAluno">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-2w">Nome</label>
+                    <input type="text" class="form-control" [(ngModel)]="aluno.nome" name="nomeAluno" data-form-field="Nome" required=""
+                        id="email-form1-2w">
+                </div>
+            </div>
+
+            <div class="col-md-4 multi-horizontal" data-for="cpfAluno">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-2w">CPF</label>
+                    <input type="text" class="form-control" [(ngModel)]="aluno.cpf" name="cpfAluno" data-form-field="CPF" required=""
+                        id="email-form1-2w">
+                </div>
+            </div>
+
+            <div class="col-md-4 multi-horizontal" data-for="cepAluno">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-2w">CEP</label>
+                    <input type="text" class="form-control" [(ngModel)]="aluno.cep" name="cepAluno" data-form-field="CEP" required=""
+                        id="email-form1-2w">
+                </div>
+            </div>
+
+            <div class="col-md-4 multi-horizontal" data-for="turma">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-2w">Turma</label>
+                    <input type="text" class="form-control" [(ngModel)]="aluno.nomeTurma" name="turma" data-form-field="Turma" required=""
+                        id="email-form1-2w">
+                </div>
+            </div>
+
+        
+
+            
+        </div>
+        
+
+        <span class="input-group-btn">
+            <button (click)='addAluno()' class="btn btn-primary btn-form display-4">Gravar</button>
+        </span>
+    </form>
+</div>
+<br>

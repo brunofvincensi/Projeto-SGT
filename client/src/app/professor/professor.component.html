@@ -1,0 +1,72 @@
+<!-- Page Content -->
+<div class="container main-container">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+        <h1 class="display-3">Professor</h1>
+        <p class="lead"></p>
+    </header>
+
+    <form class="mbr-form">
+        <div class="row row-sm-offset">
+            
+            <div class="card">
+                <div class="card-header">
+                    
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                
+                                <td>Nome</td>
+                                <td>CPF(R$)</td>
+                                <td>Capacitação</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let professor of listaProfessor" class="text-center">
+                        
+                                <td>{{ professor.nome }}</td>
+                                <td>{{ professor.cpf }}</td>
+                                <td>{{ professor.capacitacaoProfessor}}</td>
+                                <td>
+                                    <button class="btn btn-warning">Editar</button>
+                                    <button class="btn btn-danger">Excluir</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>    
+
+
+        </div>
+        <div class="row row-sm-offset">
+     
+            <div class="col-md-4 multi-horizontal" data-for="nome">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="">Nome</label>
+                    <input type="text" class="form-control"  [(ngModel)]="professor.nome" name="nome" data-form-field="nome" required=""
+                        id="email-form1-2w">
+                </div>
+            </div>
+            <div class="col-md-4 multi-horizontal" data-for="cpf">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="">CPF</label>
+                    <input type="text" class="form-control"  [(ngModel)]="professor.cpf" name="cpf" data-form-field="cpf" id="phone-form1-2w">
+                </div>
+            </div>
+        </div>
+        <div class="form-group" data-for="capacitacao">
+            <label class="form-control-label mbr-fonts-style display-7" for="">Capacitação</label>
+            <textarea type="text" class="form-control"  [(ngModel)]="professor.capacitacaoProfessor" name="capacitacao" rows="7" data-form-field="Message"
+                id="message-form1-2w"></textarea>
+        </div>
+
+        <span class="input-group-btn">
+            <button (click)='addProfessor()' class="btn btn-primary btn-form display-4">Gravar</button>
+        </span>
+    </form>
+</div>
+<br>

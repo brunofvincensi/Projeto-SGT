@@ -1,0 +1,35 @@
+<div class="container main-container">
+
+    <header>
+        <h1 class="display-3">Turmas</h1>
+        <p class="lead"></p>
+    </header>
+
+    <div class="card">
+        <div class="card-header">
+            
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td>Nome</td>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let turma of listarTurma" class="text-center">
+                
+                        <td>{{ turma.nome }}</td>
+                     
+                        <td>
+                            <button class="btn btn-warning">Editar</button>
+                            <button class="btn btn-danger">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button [routerLink]="['/turma']" class="btn btn-info" >Cadastrar Novo</button>
+        </div>
+    </div>    
+</div>

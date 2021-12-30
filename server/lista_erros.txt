@@ -1,0 +1,17 @@
+Erros para serem reparados:
+
+
+ 
+
+- como postar informação em arrayList (turma-aluno)
+
+- new Usuario x
+
+- como funciona a lista de chamadas
+
+- como inserir regras de negocio - @Service
+
+- alterar um por vez no put x
+criar uma classe dto para cada variavel
+
+

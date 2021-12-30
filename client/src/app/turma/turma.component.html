@@ -1,0 +1,85 @@
+<!-- Page Content -->
+<!--
+    <ui>Nome Empresa<input type="text"></ui>
+          <ui>Curso<input type="text"></ui>
+          <ui>Horario<input type="time"></ui>
+          <ui>Quantidade de Alunos<input type="number"></ui>
+          <ui>Nome Da Turma<input type="text"></ui>
+-->
+<div class="container main-container">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+        <h1 class="display-3">Turma</h1>
+        <p class="lead"></p>
+    </header>
+
+
+    <form class="mbr-form">
+        <div class="row row-sm-offset">
+     
+            <div class="col-md-4 multi-horizontal" data-for="horaTurma">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-2w">Horário</label>
+                    <input type="text" class="form-control" [(ngModel)]="turma.horario" name="horaTurma" data-form-field="horaTurma" required=""
+                        id="email-form1-2w">
+                </div>
+            </div>
+
+            <div class="col-md-4 multi-horizontal" data-for="periodo">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-2w">Período</label>
+                    <input type="text" class="form-control" [(ngModel)]="turma.periodo" name="periodo" data-form-field="periodo" required=""
+                        id="email-form1-2w">
+                </div>
+            </div>
+
+            <div class="col-md-4 multi-horizontal" data-for="nomeTurma">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-2w">Nome da Turma</label>
+                    <input type="text" class="form-control" [(ngModel)]="turma.nome" name="nomeTurma" data-form-field="nomeTurma" required=""
+                        id="email-form1-2w">
+                </div>
+            </div>
+
+            <div class="col-md-4 multi-horizontal" data-for="qtdAlunos">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="phone-form1-2w">Quantidade de alunos</label>
+                    <input type="number" class="form-control" [(ngModel)]="turma.quantidadeAluno" name="qtdAlunos" data-form-field="qtdAlunos" id="phone-form1-2w">
+                </div>
+            </div>
+            
+            <div class="col-md-4 multi-horizontal" data-for="Empresa">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-2w">Empresa</label>
+                    <input type="text" class="form-control" [(ngModel)]="turma.nomeCliente" name="Empresa" data-form-field="Empresa" required=""
+                        id="email-form1-2w">
+                </div>
+            </div>
+
+            <div class="col-md-4 multi-horizontal" data-for="Curso">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-2w">Curso</label>
+                    <input type="text" class="form-control" [(ngModel)]="turma.nomeCurso" name="Curso" data-form-field="Curso" required=""
+                        id="email-form1-2w">
+                </div>
+            </div>
+
+            <div class="col-md-4 multi-horizontal" data-for="professor">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-2w">Professor</label>
+                    <input type="text" class="form-control" [(ngModel)]="turma.nomeProfessor" name="professor" data-form-field="professor" required=""
+                        id="email-form1-2w">
+                </div>
+            </div>
+     
+        </div>
+
+        <span class="input-group-btn">
+            <button (click)='addTurma()' class="btn btn-primary btn-form display-4">Gravar</button>
+            <br>
+            <button (click)="getTurma()" class="btn btn-info">Listar</button>
+        </span>
+    </form>
+</div>
+<br>

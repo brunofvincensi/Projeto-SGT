@@ -1,0 +1,113 @@
+<!-- Page Content -->
+<!--
+    <ui>Nome Fantasia<input id="empresaNomeFantasia" type="text"></ui>
+          <ui>Razão Social<input type="text"></ui>
+          <ui>CNPJ<input type="number"></ui>
+          <ui>Cep<input type="number"></ui>
+          <ui>Numero<input type="number"></ui>
+          <ui>Cidade<input type="text"></ui>
+          <ui>Data De Cadastro<input type="date"></ui>
+-->
+<div class="container main-container">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+        <h1 class="display-3">Cliente</h1>
+        <p class="lead"></p>
+    </header>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                
+                <td>Nome Fantasia</td>
+                <td>Razão Social</td>
+                <td>CNPJ</td>
+                <td>CEP</td>
+                <td>Número</td>
+                <td>Cidade</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cliente of listaCliente" class="text-center">
+        
+                <td>{{ cliente.nome }}</td>
+                <td>{{ cliente.razaoSocial }}</td>
+                <td>{{ cliente.cnpj }}</td>
+                <td>{{ cliente.cep }}</td>
+                <td>{{ cliente.numero }}</td>
+                <td>{{ cliente.cidade }}</td>
+                <td>
+                    <button class="btn btn-warning">Editar</button>
+                    <button class="btn btn-danger">Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+    <form class="mbr-form">
+        <div class="row row-sm-offset">
+     
+            <div class="col-md-4 multi-horizontal" data-for="nomeFantasia">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-2w">Nome Fantasia</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nomeFantasia" data-form-field="nomeFantasia" required=""
+                        id="email-form1-2w">
+                </div>
+            </div>
+
+            <div class="col-md-4 multi-horizontal" data-for="razaoSocial">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-2w">Razão Social</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.razaoSocial" name="razaoSocial" data-form-field="razaoSocial" required=""
+                        id="email-form1-2w">
+                </div>
+            </div>
+
+            <div class="col-md-4 multi-horizontal" data-for="cnpjCliente">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-2w">CNPJ</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.cnpj" name="cnpjCliente" data-form-field="cnpjCliente" required=""
+                        id="email-form1-2w">
+                </div>
+            </div>
+
+            <div class="col-md-4 multi-horizontal" data-for="cepCliente">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-2w">CEP</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.cep" name="cepCliente" data-form-field="cepCliente" required=""
+                        id="email-form1-2w">
+                </div>
+            </div>
+
+            <div class="col-md-4 multi-horizontal" data-for="numero">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-2w">Numero</label>
+                    <input type="number" class="form-control" [(ngModel)]="cliente.numero" name="numero" data-form-field="numero" required=""
+                        id="email-form1-2w">
+                </div>
+            </div>
+
+            <div class="col-md-4 multi-horizontal" data-for="cidadeCliente">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="phone-form1-2w">Cidade</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.cidade" name="cidadeCliente" data-form-field="cidadeCliente" id="phone-form1-2w">
+                </div>
+            </div>
+
+            
+        </div>
+        
+
+        <span class="input-group-btn">
+            <button (click)='addCliente()' class="btn btn-primary btn-form display-4">Gravar</button>
+        </span>
+
+        
+
+    </form>
+</div>
+<br>

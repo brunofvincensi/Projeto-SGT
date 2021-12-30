@@ -1,0 +1,172 @@
+drop database sgt;
+
+create database sgt;
+use sgt;
+
+create table usuario(
+id int not null auto_increment,
+email  varchar(100),
+senha varchar(20),
+primary key (id)
+
+);
+
+create table turma(
+id int not null auto_increment,
+horario varchar(100),
+periodo varchar(100),
+nome varchar (100),
+quantidadeAluno int,
+primary key (id)
+);
+
+create table professor(
+id int not null auto_increment,
+nome varchar(100),
+cpf varchar(100),
+capacitacaoProfessor varchar (200),
+id_prestadorServico  int,
+primary key (id)
+);
+
+
+create table PrestadorServico(
+id int not null auto_increment,
+razaoSocial varchar(100),
+nomeFantasia varchar(100),
+cnpj varchar(100),
+numero int,
+cep varchar(100),
+dataCadastro date,
+cidade  varchar(100),
+primary key (id)
+);
+
+
+create table listaChamada(
+id int not null auto_increment,
+id_turma int,
+horario date,
+primary key (id)
+);
+
+
+create table curso(
+id int not null auto_increment,
+nome varchar(100),
+valorCurso float(10, 2),
+regulamentacao varchar(100),
+conteudoProgramatico varchar(200),
+id_prestadorServico  int,
+id_professor  int,
+primary key (id)
+);
+
+
+create table cliente(
+id int not null auto_increment,
+razaoSocial varchar(100),
+nomeFantasia varchar(100),
+cnpj varchar(100),
+numero int,
+cep varchar(100),
+dataCadastro date,
+cidade  varchar(100),
+id_usuario int,
+primary key (id)
+);
+
+
+
+create table aluno(
+id int not null auto_increment,
+nome varchar(100),
+cpf varchar(100),
+numero int,
+cep varchar(100),
+cidade varchar(100),
+primary key (id)
+);
+
+create table aluno_turma(
+id int not null auto_increment,
+id_aluno int not null,
+id_turma int not null,
+primary key (id)
+);
+
+
+
+
+select 
+t.nome,
+a.Nome_Aluno
+from aluno_turma a_t
+inner join turma t
+on t.id = a_t.id_turma
+inner join aluno a
+on a.id = a_t.id_aluno
+
+where t.nome = 'Java Web Noturno' ;
+
+
+
+ -- criação das constraints de chave estrangeira --
+ 
+alter table curso add constraint fk_curso_empresa
+foreign key(id_empresa)
+references empresa(id)
+on delete no action
+on update no action;
+
+alter table curso add constraint fk_curso_professor
+foreign key(id_professor)
+references professor(id)
+on delete no action
+on update no action;
+
+
+alter table composicaoValor add constraint fk_composicaoValor_empresa
+foreign key(id_empresa)
+references empresa(id)
+on delete no action
+on update no action;
+
+
+alter table composicaoValor add constraint fk_composicaoValor_curso
+foreign key(id_curso)
+references curso(id)
+on delete no action
+on update no action;
+
+
+alter table professor add constraint fk_professor_empresa
+foreign key(id_empresa)
+references empresa(id)
+on delete no action
+on update no action;
+
+alter table curso_turma add constraint fk_curso_turma_curso
+foreign key(id_curso)
+references curso(id)
+on delete no action
+on update no action;
+
+alter table curso_turma add constraint fk_curso_turma_turma
+foreign key(id_turma)
+references turma(id)
+on delete no action
+on update no action;
+
+
+alter table aluno_turma add constraint fk_aluno_turma_turma
+foreign key(id_turma)
+references turma(id)
+on delete no action
+on update no action;
+
+alter table aluno_turma add constraint fk_aluno_turma_aluno
+foreign key(id_aluno)
+references aluno(id)
+on delete no action
+on update no action;

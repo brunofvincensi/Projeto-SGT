@@ -1,0 +1,49 @@
+<!-- Page Content -->
+<div class="container main-container">
+
+    <header>
+        <h1 class="display-3">Curso</h1>
+        <p class="lead"></p>
+    </header>
+
+    <form class="mbr-form">
+        <div class="row row-sm-offset">
+     
+            <div class="col-md-4 multi-horizontal" data-for="nomeCurso">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="email-form1-2w">Nome</label>
+                    <input type="text" class="form-control"  [(ngModel)]="curso.nome" name="nomeCurso" data-form-field="Nome" required="ture"
+                        id="email-form1-2w">
+                </div>
+            </div>
+            <div class="col-md-4 multi-horizontal" data-for="number">
+                <div class="form-group">
+                    <label class="form-control-label mbr-fonts-style display-7" for="phone-form1-2w">Valor(R$)</label>
+                    <input type="number" class="form-control"  [(ngModel)]="curso.valorCurso" name="valorCurso" data-form-field="valorHora" id="phone-form1-2w">
+                </div>
+            </div>
+        </div>
+        <div class="form-group" data-for="message">
+            <label class="form-control-label mbr-fonts-style display-7" for="message-form1-2w">Regulamentação</label>
+            <textarea type="text" class="form-control"  [(ngModel)]="curso.regulamentacao" name="regulamentcao" rows="7" data-form-field="Message"
+                id="message-form1-2w"></textarea>
+        </div>
+
+        <div class="form-group" data-for="message">
+            <label class="form-control-label mbr-fonts-style display-7" for="message-form1-2w">Conteudo Programático</label>
+            <textarea type="text" class="form-control"  [(ngModel)]="curso.conteudoProgramatico" name="conteudoProgramatico" rows="7" data-form-field="Message"
+                id="message-form1-2w"></textarea>
+        </div>
+
+
+
+        <span class="input-group-btn">
+            <button (click)='addCurso()' class="btn btn-primary btn-form display-4">Gravar</button>
+            <br>
+            <button (click)="getCurso()" class="btn btn-info">Listar</button>
+        </span>
+    </form>
+
+</div>
+
+<br>
